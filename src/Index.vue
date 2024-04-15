@@ -1,7 +1,7 @@
 <template>
   <main class="flex flex-col bg-stone-50">
     <header
-      class="header--container z-[1] flex uppercase text-lg space-x-4 pb-4 font-medium fixed top-0 left-0 w-full p-12"
+      class="z-[1] flex uppercase text-lg space-x-4 pb-4 font-medium p-12"
     >
       <span>
         <a class="bg-stone-50 hover:bg-stone-900 hover:text-stone-50" href="">
@@ -22,11 +22,8 @@
       </div>
     </header>
 
-    <section
-      id="intro"
-      class="flex items-center justify-center min-h-[60vh] pt-24 md:pt-32"
-    >
-      <div class="py-32 smax-w-6xl mx-auto px-12">
+    <section id="intro" class="flex items-center justify-center">
+      <div class="py-12 md:py-32 smax-w-6xl mx-auto px-12">
         <h1
           class="text-xl md:text-5xl leading-[1.2] upperase font-semibold text-stone-900 uppercase"
         >
@@ -112,6 +109,10 @@
               class="text-sm font-medium !leading-[1.8]"
               v-html="experience.note"
             ></p>
+
+            <p class="text-sm font-medium">
+              Dev team size: {{ experience.devTeamSize }}
+            </p>
           </div>
         </div>
       </div>
@@ -153,9 +154,11 @@
         <h1 class="text-2xl md:text-5xl font-bold">CONTACT</h1>
       </div>
 
-      <div class="grid grid-cols-4 gap-6 text-stone-900">
-        <div>
-          <a href="">kristjan</a>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-stone-900 py-4">
+        <div v-for="item in listOfContact">
+          <a :href="item.href" target="_blank" class="text-3xl font-semibold">
+            {{ item.label }}
+          </a>
         </div>
       </div>
     </section>
@@ -280,37 +283,44 @@ const listOfExperience = [
     role: 'Full Stack Developer',
     devTeamSize: '2-5',
     note: `
-      # Hybrid Application (Web, IOS, Android) with vue + ts, docker, nodejs, aws ECS, Amplify. <br>
-      # Dynamic System for locker stations that is integrated with application. (AWS IOT Core, greengrass, python, nodejs + ts).
+      # Multiple Web applications and a main hybrid application. Different custom solutions for the web. <br>
     `.trim(),
   },
 ]
 
 const listOfTestimonial = [
   {
+    name: 'Eduard <br> Kotov',
+    position: 'CTO at CostPocket',
+    text: 'Kristjan combines his design skills and web developer experience to bring simplicity and elegance to client experience.',
+  },
+  {
     name: 'Keir <br> Volas',
     position: 'Tech Lead at Certific',
     text: 'Kristjan likes challenges and he is able to think out of the box. He is very eager to learn new things. It has been great to see his quick qrowth in front-end development in CostPocket.',
-  },
-  {
-    name: 'Mirell <br> Põllumäe',
-    position: 'OKR Coach and Head of Customer Success at Wisnio',
-    text: 'I have worked with Kristjan on different projects and he has done some pages for me. He is that type of person who just decides that he will achieve something and he will. His learning capability and will do develop is extremely strong. He works hard but he needs challenges to feel motivated. He suits for organisations who look for creative and ambitions people not so much to organisations who need someone to carry out repetitive tasks. It has been a pleasure!',
-  },
-  {
-    name: 'Viivika <br> Lumberg',
-    position: 'Key Account Manager/Email Marketing Strategist at Smaily',
-    text: 'Kristjan has an extremely creative mind and all of his designs are well thought through, user friendly and beautiful. He does not just create, but he is doing a lot of research before getting to the creation part. No matter the task (website design, email template, FB ad design, video) the outcome is always stylish and user-friendly. And in addition, he has never forgotten about a task or delayed with the delivery. I am super happy to work with him!',
   },
   {
     name: 'Joonas <br> Sernjuk',
     position: 'COO at CostPocket',
     text: 'It has been great to see him grow, when he started with CostPocket he only know very little about development, now he is coaching others. Kristjan is very good combination of designer and front end developer. He will first help you to design your product and then he will also build that product. Kristjan also has good work ethics, he is very positive, he is fast learner and he will never tell you that it is impossible -"if there is will there is weapon"',
   },
+
+  // {
+  //   name: 'Viivika <br> Lumberg',
+  //   position: 'Key Account Manager/Email Marketing Strategist at Smaily',
+  //   text: 'Kristjan has an extremely creative mind and all of his designs are well thought through, user friendly and beautiful. He does not just create, but he is doing a lot of research before getting to the creation part. No matter the task (website design, email template, FB ad design, video) the outcome is always stylish and user-friendly. And in addition, he has never forgotten about a task or delayed with the delivery. I am super happy to work with him!',
+  // },
   {
-    name: 'Eduard <br> Kotov',
-    position: 'CTO at CostPocket',
-    text: 'Kristjan combines his design skills and web developer experience to bring simplicity and elegance to client experience.',
+    name: 'Mirell <br> Põllumäe',
+    position: 'OKR Coach and Head of Customer Success at Wisnio',
+    text: 'I have worked with Kristjan on different projects and he has done some pages for me. He is that type of person who just decides that he will achieve something and he will. His learning capability and will do develop is extremely strong. He works hard but he needs challenges to feel motivated. He suits for organisations who look for creative and ambitions people not so much to organisations who need someone to carry out repetitive tasks. It has been a pleasure!',
+  },
+]
+
+const listOfContact = [
+  {
+    label: 'LINKEDIN',
+    href: 'https://www.linkedin.com/in/kristjan-suursoho-a475ba166/',
   },
 ]
 </script>

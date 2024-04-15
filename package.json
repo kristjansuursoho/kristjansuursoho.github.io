@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "description": "",
-  "homepage": "https://github.com/kristjansuursoho/kristjansuursoho.github.io/",
+  "homepage": "https://kristjansuursoho.github.io/kristjansuursoho.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist"
+    "deploy": "bun run build && git add -f dist && git commit -m 'push dist' && git subtree push --prefix dist origin gh-pages"
   },
   "author": "Kristjan Suursoho",
   "license": "ISC",
