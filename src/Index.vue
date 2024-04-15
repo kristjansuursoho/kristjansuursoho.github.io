@@ -251,7 +251,7 @@ const listOfExperience = [
     devTeamSize: '1',
     note: `
       # Hybrid Application (Web, IOS, Android) with vue + ts, docker, nodejs, aws ECS, Amplify. <br>
-      # Dynamic System for locker stations that is integrated with application. (AWS IOT Core, greengrass, python, nodejs + ts).
+      # Dynamic System for locker stations that is integrated with application. (AWS IOT Core, greengrass, python, SQS, MQTT, rust, nodejs + ts).
     `.trim(),
   },
   {
@@ -262,7 +262,7 @@ const listOfExperience = [
     devTeamSize: '1-3',
     note: `
       # Application for dermatologist, doctors and general doctors (Docker, angular + ts, AWS amplify). <br>
-      # Hybrid Mobile application (Web, IOS, Android) for psoriasis patients (NodeJs, Capacitor, angular + ts, amplify, SQS, MQTT).
+      # Hybrid Mobile application (Web, IOS, Android) for psoriasis patients (NodeJs, Capacitor, angular + ts, amplify).
     `.trim(),
   },
   {
