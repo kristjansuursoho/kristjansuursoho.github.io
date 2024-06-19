@@ -1,75 +1,119 @@
 <template>
-  <main class="flex flex-col bg-stone-50">
-    <header
-      class="z-[1] flex uppercase text-lg space-x-4 pb-4 font-medium p-12"
-    >
-      <span>
-        <a class="bg-stone-50 hover:bg-stone-900 hover:text-stone-50" href="">
-          Kristjan Suursoho - CV
-        </a>
-      </span>
-      <div class="flex-1"></div>
-
-      <div class="flex flex-col text-right">
-        <span v-for="navItem in listOfNavItem">
-          <a
-            class="bg-stone-50 hover:bg-stone-900 hover:text-stone-50"
-            :href="`#${navItem.id}`"
-          >
-            {{ navItem.label }}
-          </a>
-        </span>
-      </div>
-    </header>
-
-    <section id="intro" class="flex items-center justify-center">
-      <div class="py-12 md:py-32 smax-w-6xl mx-auto px-12">
-        <h1
-          class="text-xl md:text-5xl leading-[1.2] upperase font-semibold text-stone-900 uppercase"
+  <main
+    data-scroll-container
+    class="flex flex-col bg-stone-100 text-stone-900"
+    ref="container"
+  >
+    <div class="flex flex-col md:pt-6 2xl:pt-24">
+      <header
+        data-scroll-section
+        class="flex flex-col max-w-screen-2xl w-full mx-auto px-6 md:px-12 md:gap-4"
+      >
+        <div
+          class="flex flex-col md:flex-row md:items-end border-b-2 pb-6 border-stone-900 pt-6"
         >
-          <span class="w-24 h-4 inline-block"></span>
-          With competence in
-          <span class="text-blue-600">full-stack development</span>,
-          <span class="text-blue-600">solution architecture</span>, and
-          <span class="text-blue-600">design</span>, I ensure that digital
-          presence is not only flawlessly functional but also visually
-          practical.
-          <br />
-          <span class="w-24 h-4 inline-block"></span>
-          I'm driven by a passion for innovation and my ability to balance
-          aesthetics with functionality.
-        </h1>
-      </div>
-    </section>
+          <h1 class="text-6xl md:text-8xl md:-ml-[2px] font-medium">
+            Kristjan
+            <br />
+            Suursoho
+          </h1>
 
-    <section id="skills" class="p-12">
-      <div class="flex flex-wrap text-stone-900">
-        <div v-for="skill in listOfSkills" class="flex flex-col py-6">
-          <h3
-            class="text-2xl md:text-5xl leading-[1.2] upperase font-semibold uppercase mb-4"
+          <div class="flex-1"></div>
+
+          <div
+            class="flex md:items-end flex-col max-md:pt-6 md:pb-2 text-base md:text-lg"
           >
-            {{ skill.title }}
-          </h3>
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/kristjan-suursoho-a475ba166/"
+              class="flex items-center gap-6 md:gap-4 group hover:text-blue-800"
+            >
+              <span class="material-symbols-outlined text-lg pt-[1px]">
+                link
+              </span>
+              <span class="group-hover:underline">LinkedIn</span>
+            </a>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a
+              href="mailto:kristjan.suursoho@gmail.com"
+              class="flex items-center gap-6 md:gap-4 group hover:text-blue-800"
+            >
+              <span class="material-symbols-outlined text-lg pt-[1px]">
+                email
+              </span>
+              <span class="group-hover:underline">
+                kristjan.suursoho@gmail.com
+              </span>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <section
+        data-scroll-section
+        class="max-w-screen-2xl w-full mx-auto md:gap-6 pt-6 md:pt-12 px-6 md:px-12"
+      >
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+          <p class="col-span-1 text-xl md:text-2xl md:leading-[1.4] questrial">
+            With extensive experience collaborating with various startups and
+            development agencies, I specialize in building hybrid applications,
+            full-stack solutions, custom websites, and IoT and solution
+            architecture.
+          </p>
+
+          <p class="flex-1 text-base md:text-lg">
+            My approach to work is versatile and adaptable, no task is beneath
+            or above me, embracing tasks of all levels of complexity with
+            dedication and a willingness to learn.
+            <br /><br />
+
+            In addition to my development expertise, I have a strong interest in
+            digital design, engineering, analog music production, philosophy,
+            and art.
+            <br /><br />
+
+            These diverse interests enrich my professional perspective and fuel
+            my creativity in problem-solving.
+          </p>
+        </div>
+      </section>
+    </div>
+
+    <section
+      data-scroll-section
+      class="flex flex-col max-w-screen-2xl w-full mx-auto md:gap-6 pt-24 md:pt-24 px-6 md:px-12 md:gap-4"
+    >
+      <div
+        v-for="skill in listOfSkills"
+        class="flex flex-col gap-2 lg:gap-6 grid-cols-2"
+      >
+        <h5 class="text-4xl md:text-5xl leading-[1.2] mb-4">
+          {{ skill.title }}
+        </h5>
+
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 flex-col gap-6 md:gap-12 flex-1"
+        >
+          <div class="grid grid-cols-1 gap-4">
             <p
               v-for="description in skill.listOfDescription"
-              class="text-lg upperase font-medium uppercase"
+              class="text-base md:text-lg"
             >
               {{ description }}
             </p>
           </div>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 gap-2">
             <template v-for="extra in skill.listOfExtra">
-              <div class="flex flex-col pt-4">
-                <h5 class="text-base font-regular uppercase">
+              <div class="flex flex-col">
+                <h4 class="text-base md:text-lg">
                   {{ extra.title }}
-                </h5>
+                </h4>
+
                 <div class="text-base flex flex-wrap">
                   <span
                     v-for="item in extra.list"
-                    class="mr-1 mb-1 bg-stone-900 text-stone-50 px-1"
+                    class="text-base mr-1 mb-1 bg-stone-800 text-white px-1"
                   >
                     {{ item }}
                   </span>
@@ -81,84 +125,70 @@
       </div>
     </section>
 
-    <section id="experience" class="p-12">
-      <div class="flex items-end border-b-2 border-stone-900 py-6">
-        <h1 class="text-2xl md:text-5xl font-bold">NOTABLE EXPERIENCE</h1>
+    <section
+      data-scroll-section
+      class="flex flex-col max-w-screen-2xl w-full mx-auto md:gap-6 pt-24 md:pt-24 px-6 md:px-12 md:gap-4"
+    >
+      <div class="flex items-center py-6">
+        <h1 class="text-3xl md:text-5xl font-bold text-amber-600">
+          Work experience
+        </h1>
       </div>
 
       <div class="flex flex-col text-stone-900">
         <div
           v-for="experience in listOfExperience"
-          class="grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-12 py-6 text-lg font-medium uppercase"
+          class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-12 py-6 border-b border-stone-900"
         >
-          <div class="row-start-1 col-span-1 flex items-start text-lg">
-            <span>{{ experience.from }}</span>
-            <span>-</span>
-            <span>{{ experience.to }}</span>
-          </div>
-
-          <div class="row-start-2 lg:row-start-1 col-span-1">
-            <h3 class="font-bold">
-              <span>{{ experience.role }}</span> <br />
-              <span class="font-thin"> {{ experience.company }} </span>
+          <div class="flex flex-col">
+            <h3 class="text-xl md:text-2xl">
+              <span>
+                {{ experience.company }}
+                <span class="opacity-60 text-base font-bold">
+                  ({{ experience.from }} - {{ experience.to }})
+                </span>
+              </span>
             </h3>
+
+            <span class="text-base md:text-lg">{{ experience.role }}</span>
           </div>
 
-          <div class="col-span-2">
-            <p
-              class="text-sm font-medium !leading-[1.8]"
-              v-html="experience.note"
-            ></p>
-
-            <p class="text-sm font-medium">
-              Dev team size: {{ experience.devTeamSize }}
-            </p>
+          <div class="flex flex-col">
+            <p class="text-lg" v-html="experience.note"></p>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="testimonials" class="p-12">
-      <div class="flex items-center border-b-2 border-stone-900 py-6">
-        <h1 class="text-2xl md:text-5xl font-bold">WHAT THEY SAY ABOUT ME</h1>
+    <section
+      data-scroll-section
+      class="flex flex-col max-w-screen-2xl w-full mx-auto md:gap-6 pt-24 md:pt-24 px-6 md:px-12 md:gap-4"
+    >
+      <div class="flex items-center py-6">
+        <h1 class="text-3xl md:text-5xl font-bold text-amber-600">
+          What they say about me
+        </h1>
       </div>
 
       <div
-        class="grid md:grid-cols-3 lg:grid-cols-4 gap-12 py-12 text-stone-900"
+        class="grid md:grid-cols-1 lg:grid-cols-2 gap-12 md:gap-12 py-12 text-stone-900"
       >
         <div
           v-for="testimonial in listOfTestimonial"
-          class="flex flex-col flex-1"
+          class="flex flex-col flex-1 border-l border-stone-900 pl-6"
         >
-          <h3 class="text-sm !leading-[1.8] font-medium uppercase">
+          <h3 class="text-base md:text-lg">
             <span>{{ testimonial.text }}</span>
           </h3>
 
-          <div class="flex items-start space-x-6 pt-6">
-            <span
-              class="text-sm font-semibold uppercase"
-              v-html="testimonial.name"
-            >
+          <div class="flex flex-col pt-6">
+            <span class="text-base font-semibold">
+              {{ testimonial.name }}
             </span>
-            <span class="flex-1"></span>
-            <span class="text-sm font-regular uppercase text-right">
+            <span class="text-sm">
               {{ testimonial.position }}
             </span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="p-12 min-h-screen">
-      <div class="flex items-center border-b-2 border-stone-900 py-6">
-        <h1 class="text-2xl md:text-5xl font-bold">CONTACT</h1>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-stone-900 py-4">
-        <div v-for="item in listOfContact">
-          <a :href="item.href" target="_blank" class="text-3xl font-semibold">
-            {{ item.label }}
-          </a>
         </div>
       </div>
     </section>
@@ -167,6 +197,16 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
+import LocomotiveScroll from 'locomotive-scroll'
+
+const container = ref()
+
+onMounted(() => {
+  const scroll = new LocomotiveScroll({
+    el: container.value,
+    smooth: true,
+  })
+})
 
 const listOfNavItem = [
   {
@@ -196,11 +236,10 @@ const listOfSkills = [
     title: 'Full stack Development',
     listOfDescription: [
       'Throughout my career, I have successfully executed numerous projects, from developing web/mobile/hybrid applications, building full SSR e-commerce platforms or creating custom website solutions. I have explored and perfected various aspects of the web development, gaining extensive knowledge in web applications and API solutions.',
-      'My proficiency in various programming languages and frameworks, combined with my comprehensive understanding of software development methodologies, allows me to approach projects from an analytical and strategic perspective.',
     ],
     listOfExtra: [
       {
-        title: 'COMMONLY USED:',
+        title: 'Commonly used:',
         list: [
           'TypeScript',
           'Node/Deno/Bun',
@@ -214,8 +253,8 @@ const listOfSkills = [
         ],
       },
       {
-        title: 'INTERESTED IN FUTHER EXPAND MY KNOWLEDGE IN::',
-        list: ['Rust', 'Java/Kotlin'],
+        title: 'Also interested in',
+        list: ['Rust', 'Java/Kotlin', 'Go', 'Python'],
       },
     ],
   },
@@ -223,11 +262,10 @@ const listOfSkills = [
     title: 'Solution Architecture',
     listOfDescription: [
       'As a self-motivated and detail-oriented professional, I am deeply interested in developing high-end solutions by implementing scalable, reliable, and cost-effective strategies utilizing AWS services.',
-      'From end-to-end IoT solutions to fully scalable cloud architectures, I have considerable experience designing and implementing service-oriented applications.',
     ],
     listOfExtra: [
       {
-        title: 'COMMONLY USED:',
+        title: 'Commonly used:',
         list: [
           'Docker',
           'Terraform',
@@ -235,7 +273,9 @@ const listOfSkills = [
           'ECS',
           'VPC',
           'SQS',
-          'S3/DynamoDB/Timestream',
+          'S3',
+          'DynamoDB',
+          'Timestream',
         ],
       },
     ],
@@ -249,10 +289,7 @@ const listOfExperience = [
     to: '...',
     role: 'Lead developer & architect and IoT engineer',
     devTeamSize: '1',
-    note: `
-      # Hybrid Application (Web, IOS, Android) with vue + ts, docker, nodejs, aws ECS, Amplify. <br>
-      # Dynamic System for locker stations that is integrated with application. (AWS IOT Core, greengrass, python, SQS, MQTT, rust, nodejs + ts).
-    `.trim(),
+    note: `Developed hybrid applications (Web, iOS, Android) using Vue.js with TypeScript, Docker, Node.js, and AWS services such as ECS and Amplify. Additionally, created a dynamic system for locker stations integrated with hybrid application, utilizing AWS IoT Core, Greengrass, Python, SQS, MQTT, Rust, and Node.js with TypeScript.`.trim(),
   },
   {
     company: 'Dermtest',
@@ -260,58 +297,49 @@ const listOfExperience = [
     to: '2024',
     role: 'Lead front-end developer',
     devTeamSize: '1-3',
-    note: `
-      # Application for dermatologist, doctors and general doctors (Docker, angular + ts, AWS amplify). <br>
-      # Hybrid Mobile application (Web, IOS, Android) for psoriasis patients (NodeJs, Capacitor, angular + ts, amplify).
-    `.trim(),
+    note: `Participated in developing an application for dermatologists and general doctors using Angular with TypeScript, and AWS services. Additionally, designed and created a hybrid mobile application (Web, iOS, Android) for psoriasis patients using Node.js, Capacitor, Angular with TypeScript, and AWS services.`.trim(),
   },
   {
     company: 'Flowit',
     from: '2020',
     to: '2022',
     role: 'Full Stack Developer',
-    devTeamSize: '1-6',
-    note: `
-      # Lead front-end for tradehouse.ee + management system. <br>
-      # Front-end developer for Derossi marine CMS system (Odoo, Python, NodeJs, Postgres, Vue).
-    `.trim(),
+    devTeamSize: '2-6',
+    note: `Led front-end development for tradehouse.ee and its management system. Also contributed as a front-end developer for the Derossi Marine CMS system, utilizing Odoo, Python, Node.js, PostgreSQL, and Vue.js.`.trim(),
   },
   {
     company: 'CostPocket',
-    from: '2018',
+    from: '2017',
     to: '2022',
     role: 'Full Stack Developer',
     devTeamSize: '2-5',
-    note: `
-      # Multiple Web applications and a main hybrid application. Different custom solutions for the web. <br>
-    `.trim(),
+    note: `Cornerstone of my developer journey, having designed and developed multiple web applications, a primary hybrid application, and various custom web solutions. Developed dozens of custom solutions to address diverse requirements.`.trim(),
   },
 ]
 
 const listOfTestimonial = [
   {
-    name: 'Eduard <br> Kotov',
+    name: 'Eduard Kotov',
     position: 'CTO at CostPocket',
     text: 'Kristjan combines his design skills and web developer experience to bring simplicity and elegance to client experience.',
   },
   {
-    name: 'Keir <br> Volas',
+    name: 'Keir Volas',
     position: 'Tech Lead at Certific',
     text: 'Kristjan likes challenges and he is able to think out of the box. He is very eager to learn new things. It has been great to see his quick qrowth in front-end development in CostPocket.',
   },
   {
-    name: 'Joonas <br> Sernjuk',
+    name: 'Joonas Sernjuk',
     position: 'COO at CostPocket',
     text: 'It has been great to see him grow, when he started with CostPocket he only know very little about development, now he is coaching others. Kristjan is very good combination of designer and front end developer. He will first help you to design your product and then he will also build that product. Kristjan also has good work ethics, he is very positive, he is fast learner and he will never tell you that it is impossible -"if there is will there is weapon"',
   },
-
-  // {
-  //   name: 'Viivika <br> Lumberg',
-  //   position: 'Key Account Manager/Email Marketing Strategist at Smaily',
-  //   text: 'Kristjan has an extremely creative mind and all of his designs are well thought through, user friendly and beautiful. He does not just create, but he is doing a lot of research before getting to the creation part. No matter the task (website design, email template, FB ad design, video) the outcome is always stylish and user-friendly. And in addition, he has never forgotten about a task or delayed with the delivery. I am super happy to work with him!',
-  // },
   {
-    name: 'Mirell <br> Põllumäe',
+    name: 'Viivika Lumberg',
+    position: 'Key Account Manager/Email Marketing Strategist at Smaily',
+    text: 'Kristjan has an extremely creative mind and all of his designs are well thought through, user friendly and beautiful. He does not just create, but he is doing a lot of research before getting to the creation part. No matter the task (website design, email template, FB ad design, video) the outcome is always stylish and user-friendly. And in addition, he has never forgotten about a task or delayed with the delivery. I am super happy to work with him!',
+  },
+  {
+    name: 'Mirell Põllumäe',
     position: 'OKR Coach and Head of Customer Success at Wisnio',
     text: 'I have worked with Kristjan on different projects and he has done some pages for me. He is that type of person who just decides that he will achieve something and he will. His learning capability and will do develop is extremely strong. He works hard but he needs challenges to feel motivated. He suits for organisations who look for creative and ambitions people not so much to organisations who need someone to carry out repetitive tasks. It has been a pleasure!',
   },

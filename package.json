@@ -13,6 +13,7 @@
   "author": "Kristjan Suursoho",
   "license": "ISC",
   "dependencies": {
+    "locomotive-scroll": "^4.1.4",
     "vue": "^3.4.21"
   },
   "devDependencies": {
