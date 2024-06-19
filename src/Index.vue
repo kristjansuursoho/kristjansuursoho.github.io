@@ -57,8 +57,7 @@
           <p class="col-span-1 text-xl md:text-2xl md:leading-[1.4] questrial">
             With extensive experience collaborating with various startups and
             development agencies, I specialize in building hybrid applications,
-            full-stack solutions, custom websites, and IoT and solution
-            architecture.
+            full-stack solutions, custom websites, and solution architecture.
           </p>
 
           <p class="flex-1 text-base md:text-lg">
