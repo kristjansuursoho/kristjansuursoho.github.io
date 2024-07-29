@@ -1,6 +1,6 @@
 <template>
   <main
-    class="prose brose-base flex flex-col text-black max-w-4xl w-full mx-auto py-8 md:py-12 lg:py-24 prose-p:mb-2 prose-p:mt-1 prose-h2:mb-2 prose-h3:mb-1 prose-h3:mt-3 prose-h4:mb-1 prose-h4:mt-0 prose-p:leading-6 prose-ul:my-0 prose-li:my-0 prose-li:marker:text-black px-8 md:px-12"
+    class="prose brose-base flex flex-col text-black max-w-4xl w-full mx-auto py-8 md:py-12 lg:py-24 prose-p:mb-2 prose-p:mt-1 prose-h2:mb-2 prose-h3:mb-1 prose-h3:mt-3 prose-h4:mb-1 prose-h4:mt-0 prose-p:leading-6 prose-ul:my-0 prose-li:my-0 prose-li:marker:text-black px-6 md:px-12"
   >
     <header class="text-center">
       <div class="flex items-center flex-wrap">
@@ -8,7 +8,7 @@
           <p>Tallinn, Estonia</p>
         </div>
 
-        <div class="flex-1 text-center max-md:text-left">
+        <div class="flex-1 text-center max-md:text-left pr-4">
           <a
             target="_blank"
             href="https://www.linkedin.com/in/kristjan-suursoho-a475ba166/"
@@ -31,9 +31,9 @@
       <div class="text-center md:px-6 pt-2">
         <p>
           For the last decade or so I've been heavily involved with building
-          start-ups and working with development agencies. During this time I've
+          start-ups or working with development agencies. During this time I've
           been lucky to acquire a handful of skills while creating scalable and
-          reliable solutions for the web abd mobile. On my off days I'm drawn to
+          reliable solutions for the web and mobile. On my off days I'm drawn to
           analog music, engineering, philosophy, and art. I hope to encounter a
           position which allows me to build upon the abilities so far acquired.
         </p>
@@ -69,7 +69,7 @@
           <h3>{{ experience.company }}</h3>
           <div class="flex items-end">
             <h4>{{ experience.role }}</h4>
-            <div class="flex-1"></div>
+            <div class="flex-1 w-12"></div>
             <h4 class="text-right">
               {{ experience.from }} - {{ experience.to }}
             </h4>
@@ -85,10 +85,10 @@
       <h2>Testimonials</h2>
       <div class="flex flex-col gap-2 pt-2">
         <div v-for="testimonial in listOfTestimonial">
-          <div class="flex items-end">
+          <div class="flex max-sm:flex-col sm:items-end">
             <h3>{{ testimonial.name }}</h3>
             <div class="flex-1"></div>
-            <h4 class="text-right">{{ testimonial.position }}</h4>
+            <h4 class="sm:text-right">{{ testimonial.position }}</h4>
           </div>
           <p v-html="testimonial.text"></p>
         </div>
@@ -167,7 +167,7 @@ const listOfExperience = [
     devTeamSize: '1-3',
     listOfNote: [
       'Participated in developing an application for dermatologists and general doctors using Angular with TypeScript, and AWS services.',
-      'Designed and created a hybrid mobile application for psoriasis patients using Node.js, Capacitor, Angular with TypeScript, and AWS services.',
+      'Designed and developed a hybrid mobile application for psoriasis patients using Node.js, Capacitor, Angular with TypeScript, and AWS services.',
     ],
   },
   {
