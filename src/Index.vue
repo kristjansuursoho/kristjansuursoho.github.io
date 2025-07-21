@@ -1,108 +1,120 @@
 <template>
-  <main
-    class="prose brose-base flex flex-col text-black max-w-4xl w-full mx-auto py-8 md:py-12 lg:py-24 prose-p:mb-2 prose-p:mt-1 prose-h2:mb-2 prose-h3:mb-1 prose-h3:mt-3 prose-h4:mb-1 prose-h4:mt-0 prose-p:leading-6 prose-ul:my-0 prose-li:my-0 prose-li:marker:text-black px-6 md:px-12"
-  >
-    <header class="text-center">
-      <div class="flex items-center flex-wrap">
-        <div class="max-sm:hidden flex-1 text-left">
-          <p>Tallinn, Estonia</p>
+  <div class="md:p-12">
+    <main
+      class="bg-white prose brose-base flex flex-col flex-wrap text-black max-w-5xl w-full mx-auto py-8 md:py-12 lg:py-24 prose-p:mb-2 prose-p:mt-1 prose-h2:mb-2 prose-h3:mb-1 prose-h3:mt-3 prose-h4:mb-1 prose-h4:mt-0 prose-p:leading-6 prose-ul:my-0 prose-li:my-0 prose-li:marker:text-black px-6 md:px-12">
+
+      <header class="flex max-md:flex-wrap items-end w-full border-b pb-4">
+        <div class="flex-1">
+          <h1 class="mb-0.5 font-medium text-5xl md:text-7xl leading-[0.9] tracking-tight">KRISTJAN <br> SUURSOHO</h1>
         </div>
 
-        <div class="flex-1 text-center max-md:text-left pr-4">
-          <a
-            target="_blank"
-            href="https://www.linkedin.com/in/kristjan-suursoho-a475ba166/"
-          >
-            <span class="group-hover:underline">LinkedIn</span>
-          </a>
-        </div>
+        <div class="max-md:w-full flex flex-col md:items-end max-md:pt-6 pb-2">
+          <span class="leading-6">Tallinn, Estonia</span>
 
-        <div class="flex-1 text-right">
-          <a href="mailto:kristjan.suursoho@gmail.com">
-            <span class="group-hover:underline">
-              kristjan.suursoho@gmail.com
-            </span>
+          <a class="leading-6" target="_blank" href="https://www.linkedin.com/in/kristjan-suursoho-a475ba166/">
+            LinkedIn
+          </a>
+
+          <a class="leading-6" href="mailto:kristjan.suursoho@gmail.com">
+            kristjan.suursoho@gmail.com
           </a>
         </div>
-      </div>
-      <div class="py-6 border-y border-black">
-        <h1 class="mb-0.5">Kristjan Suursoho</h1>
-      </div>
-      <div class="text-center md:px-6 pt-2">
-        <p>
-          For the last decade or so I've been heavily involved with building
-          start-ups or working with development agencies. During this time I've
-          been lucky to acquire a handful of skills while creating scalable and
-          reliable solutions for the web and mobile. On my off days I'm drawn to
-          analog music, engineering, philosophy, and art. I hope to encounter a
-          position which allows me to build upon the abilities so far acquired.
+      </header>
+
+      <div class="py-4">
+        <p class="opacity-90">
+          Over the past decade, I've been helping different startups and development agencies develop strategies and
+          execute their visions by designing and developing scalable and reliable solutions for various domains, like
+          IoT systems, web platforms, and mobile apps. Whether it's architecting end-to-end IoT ecosystems that handle
+          data flows from sensors to the cloud, or building robust web platforms and apps, I like creating stuff that's
+          robust and future-proof. When I'm not deep in code, I recharge with piano/analog music or getting lost in art.
         </p>
       </div>
-    </header>
 
-    <section class="divide-y divide-black">
-      <h2>Skills and ambitions</h2>
-      <div class="flex flex-col gap-2 pt-2">
-        <div v-for="skill in listOfSkills">
-          <h3>{{ skill.title }}</h3>
-          <p>{{ skill.description }}</p>
+      <section class="divide-y ">
+        <h2 class="opacity-90 font-medium">Skills and ambitions</h2>
 
-          <div v-for="extra in skill.listOfExtra" class="pt-1 flex flex-wrap">
-            <p class="mr-2 !mb-0 !mt-0">{{ extra.title }}</p>
-            <p
-              class="mr-2 !mb-0 !mt-0 italic"
-              v-for="(item, index) in extra.list"
-            >
-              <span
-                >{{ item }}{{ index < extra.list.length - 1 ? ',' : '.' }}</span
-              >
-            </p>
+        <div class="flex flex-col gap-2 pt-2">
+          <div v-for="skill in listOfSkills">
+            <h3 class="opacity-90 font-medium">{{ skill.title }}</h3>
+            <p>{{ skill.description }}</p>
+
+            <div v-for="extra in skill.listOfExtra" class="pt-1 flex flex-wrap">
+              <p class="mr-2 !mb-0 !mt-0">{{ extra.title }}</p>
+              <p class="mr-2 !mb-0 !mt-0 italic" v-for="(item, index) in extra.list">
+                <span>{{ item }}{{ index < extra.list.length - 1 ? ',' : '.' }}</span>
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="divide-y divide-black">
-      <h2>Professional Experience</h2>
-      <div class="flex flex-col gap-2 pt-2">
-        <div v-for="experience in listOfExperience">
-          <h3>{{ experience.company }}</h3>
-          <div class="flex items-end">
-            <h4>{{ experience.role }}</h4>
-            <div class="flex-1 w-12"></div>
-            <h4 class="text-right">
-              {{ experience.from }} - {{ experience.to }}
-            </h4>
+      <section
+        class="divide-y For the last decade or so I've been heavily involved with building start-ups or working with development agencies.">
+        <h2 class="opacity-90 font-medium">Professional Experience</h2>
+        <div class="flex flex-col gap-2 pt-2">
+          <div v-for="experience in listOfExperience">
+            <h3 class="opacity-90 font-medium">{{ experience.company }}</h3>
+            <div class="flex items-end">
+              <h4>{{ experience.role }}</h4>
+              <div class="flex-1 w-12"></div>
+              <h4 class="text-right">
+                {{ experience.from }} - {{ experience.to }}
+              </h4>
+            </div>
+            <ul>
+              <li v-for="note in experience.listOfNote">{{ note }}</li>
+            </ul>
           </div>
-          <ul>
-            <li v-for="note in experience.listOfNote">{{ note }}</li>
-          </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="divide-y divide-black">
-      <h2>Testimonials</h2>
-      <div class="flex flex-col gap-2 pt-2">
-        <div v-for="testimonial in listOfTestimonial">
-          <div class="flex max-sm:flex-col sm:items-end">
-            <h3>{{ testimonial.name }}</h3>
-            <div class="flex-1"></div>
-            <h4 class="sm:text-right">{{ testimonial.position }}</h4>
+      <section
+        class="divide-y For the last decade or so I've been heavily involved with building start-ups or working with development agencies.">
+        <h2 class="opacity-90 font-medium">Testimonials</h2>
+        <div class="flex flex-col gap-2 pt-2">
+          <div v-for="testimonial in listOfTestimonial">
+            <div class="flex max-sm:flex-col sm:items-end">
+              <h3 class="opacity-90 font-medium">{{ testimonial.name }}</h3>
+              <div class="flex-1"></div>
+              <h4 class="sm:text-right">{{ testimonial.position }}</h4>
+            </div>
+            <p v-html="testimonial.text"></p>
           </div>
-          <p v-html="testimonial.text"></p>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
+  </div>
 </template>
 
 <script setup lang="ts">
 const listOfSkills = [
   {
+    title: 'IoT and Solution Architecture',
+    description:
+      'As a dedicated and detail-oriented professional, I am passionate about developing robust and cost-effective strategies using AWS services.',
+    listOfExtra: [
+      {
+        title: 'Commonly used:',
+        list: [
+          'Terraform',
+          'AWS IoT/Greengrass',
+          'DynamoDB',
+          'Lambda',
+          'ECS',
+          'VPC',
+          'SQS',
+          'S3',
+          'Docker',
+          'Timestream',
+        ],
+      },
+    ],
+  },
+  {
     title: 'Full stack Development',
     description:
-      'The majority of my working hours have been dedicated to designing, developing, and managing different web and mobile solutions. I am eager to build and perfect various aspects of web applications, managmenent tools, micorservices or custom solutions.',
+      'Im very eager to build and perfect various aspects of web applications, managmenent tools, micorservices or custom solutions.',
     listOfExtra: [
       {
         title: 'Commonly used:',
@@ -120,42 +132,22 @@ const listOfSkills = [
       },
       {
         title: 'Also interested in: ',
-        list: ['Rust', 'Java/Kotlin', 'Go'],
+        list: ['c++', 'Rust', 'Java/Kotlin', 'Go'],
       },
     ],
   },
-  {
-    title: 'Solution Architecture',
-    description:
-      'As a dedicated and detail-oriented professional, I am passionate about developing robust and cost-effective strategies using AWS services.',
-    listOfExtra: [
-      {
-        title: 'Commonly used:',
-        list: [
-          'Docker',
-          'Terraform',
-          'AWS IoT/Greengrass',
-          'ECS',
-          'VPC',
-          'SQS',
-          'S3',
-          'DynamoDB',
-          'Timestream',
-        ],
-      },
-    ],
-  },
+
 ]
 
 const listOfExperience = [
   {
     company: 'C-BOX',
-    from: '2022',
-    to: 'Present',
+    from: '2021',
+    to: '2023',
     role: 'Lead developer & IoT engineer',
     devTeamSize: '1',
     listOfNote: [
-      'Designed and developed end-to-end system for urban smart locker stations, ensuring reliable integration with various web and mobile solutions, utilizing AWS IoT Core, Greengrass, Python, SQS, MQTT, Rust, and Node.js with TypeScript.',
+      'Designed and developed end-to-end system for urban smart locker stations, ensuring reliable integration with various web and mobile solutions, utilizing AWS IoT Core, Greengrass, Python, SQS, MQTT, Rust, and TypeScript.',
       'Developed hybrid application (iOS, Android, WEB) using Vue.js with TypeScript, Docker, Node.js, and AWS services such as ECS and Amplify',
     ],
   },
