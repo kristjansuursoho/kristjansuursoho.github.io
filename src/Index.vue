@@ -25,9 +25,12 @@
         <p class="opacity-90">
           Over the past decade, I've been helping different startups and development agencies develop strategies and
           execute their visions by designing and developing scalable and reliable solutions for various domains, like
-          IoT systems, web platforms, and mobile apps. Whether it's architecting end-to-end IoT ecosystems that handle
-          data flows from sensors to the cloud, or building robust web platforms and apps, I like creating stuff that's
-          robust and future-proof. When I'm not deep in code, I recharge with piano/analog music or getting lost in art.
+          IoT systems, web/cloud platforms, and mobile apps. When I'm not deep in code, I recharge with piano/analog
+          music or getting lost in art.
+          <br>
+          <br>
+          I am currently freelancing and working on various projects, most of which focus on IoT and solution
+          architecture.
         </p>
       </div>
 
