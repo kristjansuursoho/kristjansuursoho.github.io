@@ -113,7 +113,7 @@ const listOfSkills = [
         ],
       },
       {
-        title: 'Devices',
+        title: 'Devices:',
         list: ['Huawei Sun 200 inverter', 'ESP32', 'STM32', 'Pi',],
       },
     ],
