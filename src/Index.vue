@@ -100,7 +100,6 @@ const listOfSkills = [
       {
         title: 'Commonly used:',
         list: [
-          'Terraform',
           'AWS IoT/Greengrass',
           'DynamoDB',
           'Lambda',
@@ -110,7 +109,12 @@ const listOfSkills = [
           'S3',
           'Docker',
           'Timestream',
+          'Terraform',
         ],
+      },
+      {
+        title: 'Devices',
+        list: ['Huawei Sun 200 inverter', 'ESP32', 'STM32', 'Pi',],
       },
     ],
   },
@@ -130,12 +134,11 @@ const listOfSkills = [
           'Vite/Webpack',
           'Nuxt/Next',
           'SPA/WPA/SSR',
-          'Python',
         ],
       },
       {
         title: 'Also interested in: ',
-        list: ['c++', 'Rust', 'Java/Kotlin', 'Go'],
+        list: ['c++', 'Rust', 'Java/Kotlin', 'Go', 'Python'],
       },
     ],
   },
@@ -146,7 +149,7 @@ const listOfExperience = [
   {
     company: 'C-BOX',
     from: '2021',
-    to: '2023',
+    to: '2024',
     role: 'Lead developer & IoT engineer',
     devTeamSize: '1',
     listOfNote: [
